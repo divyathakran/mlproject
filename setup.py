@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from typing import List
 
 HYPEN_E_DOT = '-e .'
 def get_requirements(file_path:str)->list[str]:
@@ -13,6 +14,7 @@ def get_requirements(file_path:str)->list[str]:
             requirements.remove(HYPEN_E_DOT)
     return requirements
 
+# meta data of project
 setup(
     name='mlproject',
     version='0.0.1',
