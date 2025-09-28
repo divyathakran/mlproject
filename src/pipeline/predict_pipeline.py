@@ -11,9 +11,11 @@ class PredictPipeline:
 
     def predict(self,features):
         try:
-            model_path = os.path.join(os.path.dirname(__file__), "..", "artifacts", "model.pkl")
-            preprocessor_path = os.path.join(os.path.dirname(__file__), "..", "artifacts", "preprocessor.pkl")
-            print("Before Loading")
+            base_path = os.path.dirname(__file__)   # folder of this file
+            root_path = os.path.abspath(os.path.join(base_path, "..", ".."))
+
+            model_path = os.path.join(root_path, "artifacts", "model.pkl")
+            preprocessor_path = os.path.join(root_path, "artifacts", "preprocessor.pkl")
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
             print("After Loading")
